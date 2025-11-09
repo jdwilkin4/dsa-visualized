@@ -30,7 +30,7 @@ export function Navbar() {
       return <LinksList className="flex gap-4" linksArr={links} />;
     }
 
-    return <MobileNavLinks linksArr={links} />;
+    return <MobileMenu linksArr={links} />;
   };
 
   return (
@@ -66,7 +66,7 @@ function LinksList({ className = "", linksArr }: LinksListProps) {
   );
 }
 
-function MobileNavLinks({ linksArr }: LinksListProps) {
+function MobileMenu({ linksArr }: LinksListProps) {
   const [isMenuShowing, setIsMenuShowing] = useState(false);
   return (
     <>
