@@ -20,19 +20,26 @@ export function Navbar() {
 
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
+  const renderNavigation = () => {
+    if (isDesktop === undefined) {
+      // show placeholder
+      return <div className="w-10 h-10"></div>;
+    }
+
+    if (isDesktop) {
+      return <LinksList className="flex gap-4" linksArr={links} />;
+    }
+
+    return <MobileNavLinks linksArr={links} />;
+  };
+
   return (
     <header className="py-6 font-bold border-b border-gray-600 flex items-center justify-around">
       <div className="logo-container flex gap-2">
         <Brain size={30} />
         <p className="text-2xl">DSA Visualized</p>
       </div>
-      <nav className="relative">
-        {isDesktop ? (
-          <LinksList className="flex gap-4" linksArr={links} />
-        ) : (
-          <MobileNavLinks linksArr={links} />
-        )}
-      </nav>
+      <nav className="relative">{renderNavigation()}</nav>
     </header>
   );
 }
