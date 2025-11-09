@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <header className="py-6 border-b-1 border-gray-600 flex items-center justify-around">
+    <header className="py-6 font-bold border-b-1 border-gray-600 flex items-center justify-around">
       <div className="logo-container flex gap-2">
         <Brain size={30} />
         <p className="text-2xl">DSA Visualized</p>
